@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.sinnake</groupId>
+		<artifactId>sinnake.main</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>com.sinnake.web</groupId>
+	<artifactId>com.sinnake.web</artifactId>
+	<version>0.0.1</version>
+	<name>sinnake.web Maven Webapp</name>
+	<description>sinnake.web</description>
+	<packaging>war</packaging>
+	<url>http://maven.apache.org</url>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.sinnake.util</groupId>
+			<artifactId>com.sinnake.util</artifactId>
+			<version>0.0.1</version>
+			<type>jar</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.sinnake.common</groupId>
+			<artifactId>com.sinnake.common</artifactId>
+			<version>0.0.1</version>
+			<type>jar</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.sinnake.prop</groupId>
+			<artifactId>com.sinnake.prop</artifactId>
+			<version>0.0.1</version>
+			<type>war</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.sinnake.service</groupId>
+			<artifactId>com.sinnake.service</artifactId>
+			<version>0.0.1</version>
+			<type>jar</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.sinnake.defController</groupId>
+			<artifactId>com.sinnake.defController</artifactId>
+			<version>0.0.1</version>
+			<type>war</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.sinnake.resources</groupId>
+			<artifactId>com.sinnake.resources</artifactId>
+			<version>0.0.1</version>
+			<type>war</type>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.sinnake.biz</groupId>
+			<artifactId>com.sinnake.biz</artifactId>
+			<version>0.0.1</version>
+			<type>jar</type>		
+		</dependency>
+	</dependencies>
+</project>

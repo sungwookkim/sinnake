@@ -1,0 +1,18 @@
+<table id="{{tableId}}" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp {{chkBoolHelper chkBool}} {{tableCls}}" {{{tableAttr}}} style="{{{tableStyle}}}">
+	<thead>
+		<tr>
+			{{#ths}}
+			<th class="{{{thCls}}}" style="{{{thStyle}}}">{{{thText}}}</th>
+			{{/ths}}
+		</tr>
+	</thead>
+	<tbody>
+		{{#trs}}
+		<tr id="{{trId}}" class="{{trCls}}" style="{{{trStyle}}}">
+			{{#tds}}
+			<td class="mdl-data-table__cell {{tdCls}}" style="{{{tdStyle}}}" {{{tdAttr}}}><span>{{{tdText}}}</span></td>
+			{{/tds}}
+		</tr>
+		{{/trs}}
+	</tbody>
+</table>

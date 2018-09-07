@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <comment>tagMessage_en</comment>
+    
+    <entry key="msg.test1">en eng info...(modify111123)&lt;br&gt;</entry>
+    <entry key="msg.test2">en parameter1 = {0}, parameter2 = {1}...</entry>
+</properties>

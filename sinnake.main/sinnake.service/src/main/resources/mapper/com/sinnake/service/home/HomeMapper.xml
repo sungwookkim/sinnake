@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.sinnake.service.home.HomeMapper">
+	 <select id="getTotalCity" resultType="java.util.HashMap" parameterType="int">
+		  SELECT * FROM CITY WHERE ID = #{id}
+	 </select>
+	 
+	 <insert id="setTotalCity" parameterType="java.util.HashMap">
+		INSERT INTO city (
+			Name
+			, CountryCode
+			, District
+			, Population
+		) VALUES (
+			#{name}
+			, #{countryCode}
+			, #{district}
+			, #{population}
+		)	 	
+	 </insert>
+</mapper> 

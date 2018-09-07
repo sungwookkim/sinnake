@@ -1,0 +1,13 @@
+<div class="mdl-mega-footer__middle-section">
+	{{#middleInfo}}
+	<div class="mdl-mega-footer__drop-down-section">
+		<input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked="">
+		<h1 class="mdl-mega-footer__heading">{{mainTitle}}</h1>
+		<ul class="mdl-mega-footer__link-list">
+			{{#middleFooter}}
+			<li><a href="{{link}}">{{title}}</a></li>
+			{{/middleFooter}}
+		</ul>
+   	</div>
+   	{{/middleInfo}}
+</div>

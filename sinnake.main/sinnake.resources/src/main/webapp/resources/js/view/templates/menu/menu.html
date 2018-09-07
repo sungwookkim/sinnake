@@ -1,0 +1,13 @@
+<div class="mdl-shadow--2dp">
+	{{#menuList}}
+	<button id="menu-lower-{{menuId}}" class="mdl-button mdl-js-button mdl-button--icon {{menuCls}}">
+		<i class="material-icons">{{icon}}</i>
+	</button>
+	<div id="{{titleId}}" class="{{titleCls}}" style="display: inline-block;">{{{title}}}</div>
+	<ul class="mdl-menu mdl-js-menu mdl-menu--bottom-left" for="menu-lower-{{menuId}}">
+		{{#list}}
+			<li {{menuDisableHelper disableFlag}} class="mdl-menu__item {{menuDividerHelper dividerFlag}}">{{{tag}}}</li>
+		{{/list}}
+	</ul>
+	{{/menuList}}
+</div>

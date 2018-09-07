@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <comment>dev_stage_properties</comment>
+    
+	<!-- 개발 관련 설정 내용 시작 -->
+	<entry key="dev.userName">stage Sungwkim!!!</entry>
+	<entry key="dev.passwornd">stage Hahah</entry>
+	<!-- 개발 관련 설정 내용 끝 -->	
+	
+</properties>

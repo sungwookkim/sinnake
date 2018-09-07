@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <comment>server_dev_properties</comment>
+    
+	<!-- 서버 설정 내용 시작 -->
+	<!-- 서버 설정 -->
+	<entry key="webConfig.msgSource.basenames">classpath:message/tagMessage</entry>
+	<entry key="webConfig.ir_viewResolver.prefix">/WEB-INF/views/</entry>
+	<entry key="webConfig.ir_viewResolver.suffix">.jsp</entry>
+	
+	<!-- spring security 관련 설정 -->
+	<entry key="maxAttempts">5</entry>							
+	<entry key="sqlUsersByUsernameQuery"> 
+		SELECT
+			M.USERNAME
+			, M.PASSWORD
+			, M.ENABLED
+			, M.ACCOUNTNONEXPIRED
+			, M.CREDENTIALSNONEXPIRED
+			, M.ACCOUNTNONLOCKED 	
+			, IFNULL(MA.ATTEMPTS, 0) AS ATTEMPTS
+			, IFNULL(MA.LASTMODIFIED, SYSDATE()) AS LASTMODIFIED
+		FROM
+			MEMBER M LEFT JOIN MEMBERATTEMPTS MA
+			ON M.USERNAME = MA.USERNAME
+		WHERE
+			M.USERNAME = ?
+	</entry>
+    <entry key="sqlAuthoritiesByUsernameQuery">SELECT USERNAME, ROLE FROM USER_ROLES WHERE USERNAME = ?</entry>
+	<entry key="sqlUsersUpdateLocked">UPDATE MEMBER SET ACCOUNTNONLOCKED = ? WHERE USERSNAME = ?</entry>
+	<entry key="sqlUsersCount">SELECT COUNT(*) FROM MEMBER WHERE USERNAME = ?</entry>
+	<entry key="sqlUserAttemptsGet">SELECT * FROM MEMBERATTEMPTS WHERE USERNAME = ?</entry>
+	<entry key="sqlUserAttemptsInsert">INSERT INTO MEMBERATTEMPTS (USERNAME, ATTEMPTS, LASTMODIFIED) VALUES(?, ?, ?)</entry>
+	<entry key="sqlUserAttemptsUpdateAttempts">UPDATE MEMBERATTEMPTS SET ATTEMPTS = ATTEMPTS + 1, LASTMODIFIED = ? WHERE USERNAME = ?</entry>
+	<entry key="sqlUserAttemptsResetAttempts">UPDATE MEMBERATTEMPTS SET ATTEMPTS = 0, LASTMODIFIED = ? WHERE USERNAME = ?</entry>
+	
+	<!-- 암호화 관련 설정 -->
+	<entry key="dbAes256.key">sinnakeAes256@$%DB</entry>
+	<entry key="pwAes256.key">sinnakeAes256@$%PW</entry>
+	<!-- 서버 설정 내용 끝 -->	
+</properties>

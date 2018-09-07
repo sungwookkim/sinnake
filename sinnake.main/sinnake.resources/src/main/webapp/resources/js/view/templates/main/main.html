@@ -1,0 +1,40 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	<header class="mdl-layout__header">
+		<div class="mdl-layout__header-row">
+			<span class="mdl-layout-title">
+				<a class="mdl-layout-title mdl-navigation__link" href="{{headerMenu.link}}">{{headerMenu.headerTitle}}</a>
+			</span>
+			<div class="mdl-layout-spacer"></div>
+			<nav id="header_menu" class="mdl-navigation">
+				{{#headerMenu.menus}}
+					<a id="{{id}}" class="mdl-navigation__link" href="{{link}}">{{text}}</a>
+				{{/headerMenu.menus}}
+				
+				<a id="header_login" class="mdl-navigation__link" href="javascript:return false;">{{{headerMenu.header_login_text}}}</a>
+				{{#if headerMenu.header_regist_bool}}
+				<a id="header_member_regist" class="mdl-navigation__link" href="/member/regist">{{{headerMenu.header_member_regist_text}}}</a>
+				{{/if}}
+				
+				{{{langChangeRender}}}
+				{{{commKindRender}}}
+			</nav>
+		</div>
+	</header>
+	<div class="mdl-layout__drawer">
+		{{#drawer}}
+		<span class="mdl-layout-title">{{drawerTitle}}</span>
+		<nav class="mdl-navigation">
+			{{#menus}}
+			<a class="mdl-navigation__link" href="{{link}}">{{text}}</a>
+			{{/menus}}
+		</nav>
+		{{/drawer}}
+	</div>
+	<main class="mdl-layout__content">
+		<div id="hamMenu" style="margin: 5px;">최상위 왼쪽 햄버거 버튼에 상세 메뉴가 있습니다.</div>
+		<div class="page-content {{mainContentCls}}">
+			<div class="pageContent {{pgContent}}"></div>
+			<div class="pageFooter {{pgFooter}}"></div>
+		</div>
+	</main>
+</div>

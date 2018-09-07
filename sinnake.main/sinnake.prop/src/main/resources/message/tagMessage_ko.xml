@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <comment>tagMessage_ko</comment>
+
+    <entry key="msg.test1">ko 11111한글 정보는...(수정)(수정)(수정)(수정)ddd11111&lt;br&gt;</entry>
+    <entry key="msg.test2">ko 파라미터1 = {0}, 파라미터2 = {1}...</entry>
+</properties>

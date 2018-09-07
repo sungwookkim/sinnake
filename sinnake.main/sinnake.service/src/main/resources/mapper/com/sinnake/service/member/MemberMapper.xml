@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.sinnake.service.member.MemberMapper">
+
+	<!-- 회원정보 조회 -->
+	<select id="getMember" resultType="java.util.HashMap" parameterType="java.lang.String">
+		SELECT * FROM MEMBER WHERE USERNAME = #{memberId}
+	</select>
+	
+	<!-- 상세 회원 정보 조회 -->
+	<select id="getMemberDetail" resultType="java.util.HashMap" parameterType="java.lang.String">
+		SELECT
+			*
+		FROM
+			MEMBER M
+			, MEMBER_DETAIL MD
+			, MEMBERATTEMPTS MA
+		WHERE
+			M.USERNAME = #{memberId}
+			AND M.USERNAME = MD.USERNAME
+			AND M.USERNAME = MA.USERNAME	
+	</select>
+
+	<!-- 회원 등록 -->
+	<insert id="setMember" parameterType="java.util.Map">
+		INSERT INTO MEMBER (
+			username
+			, password
+			, enabled
+			, accountNonExpired
+			, accountNonLocked
+			, credentialsNonExpired
+		) VALUES(
+			#{memberId}
+			, #{memberPwd}
+			, #{enabled}
+			, #{accountNonExpired}
+			, #{accountNonLocked}
+			, #{credentialsNonExpired}
+		)
+	</insert>
+
+	<!-- 회원 로그인 시도 횟수 등록 -->
+	<insert id="setMemberAttempts" parameterType="java.util.Map">
+		INSERT INTO memberAttempts(
+			username
+			, attempts
+		) VALUES(
+			#{memberId}
+			, #{attempts}
+		)
+	</insert>
+		
+	<!-- 회원 권한 등록 -->
+	<insert id="setMemberRoles" parameterType="java.util.Map">
+		INSERT INTO user_roles(
+			username
+			, role
+		) VALUES(
+			#{memberId}
+			, #{role}
+		)
+	</insert>
+	
+	<!-- 회원 상세 정보 등록 -->
+	<insert id="setMemberDetail" parameterType="java.util.Map">
+		INSERT INTO member_detail(
+			username			
+			, termsService
+			, termsPrivacy
+			, postCode
+			, address
+			, detail_address
+		) VALUES (
+			#{memberId}
+			, #{termsService}
+			, #{termsPrivacy}
+			, #{postCode}
+			, #{address}
+			, #{detailAddress}
+		)
+	</insert>
+	
+	<!-- 회원 정보 수정 -->
+	<update id="setMember_UP" parameterType="java.util.Map">
+		UPDATE MEMBER SET			
+			password = #{memberPwd}
+		WHERE
+			USERNAME = #{memberId}	
+	</update>
+	
+	<!-- 회원 상세 정보 수정 -->
+	<update id="setMemberDetail_UP" parameterType="java.util.Map">
+		UPDATE MEMBER_DETAIL SET
+			postCode = #{postCode}
+			, address = #{address}
+			, detail_address = #{detailAddress}
+		WHERE
+			USERNAME = #{memberId}
+	</update>
+</mapper> 

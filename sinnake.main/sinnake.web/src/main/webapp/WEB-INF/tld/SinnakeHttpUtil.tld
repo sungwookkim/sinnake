@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+        
+	<tlib-version>1.0</tlib-version>
+	<short-name>SinnakeHttpUtil</short-name>
+	<uri>SinnakeHttpUtil</uri>
+	
+	<function>
+		<name>canonicalize</name>
+		<function-class>com.sinnake.util.SinnakeHttpUtil</function-class>
+		<function-signature>
+			java.lang.String canonicalize(java.lang.String)
+		</function-signature>
+	</function>
+    
+	<function>
+		<name>encodeForHTML</name>
+		<function-class>com.sinnake.util.SinnakeHttpUtil</function-class>
+		<function-signature>
+			java.lang.String encodeForHTML(java.lang.String)
+		</function-signature>
+	</function>
+	
+	<function>
+		<name>encodeForJavaScript</name>
+		<function-class>com.sinnake.util.SinnakeHttpUtil</function-class>
+		<function-signature>
+			java.lang.String encodeForJavaScript(java.lang.String)
+		</function-signature>
+	</function>
+
+	<function>
+		<name>encodeForURL</name>
+		<function-class>com.sinnake.util.SinnakeHttpUtil</function-class>
+		<function-signature>
+			java.lang.String encodeForURL(java.lang.String)
+		</function-signature>
+	</function>
+</taglib>
